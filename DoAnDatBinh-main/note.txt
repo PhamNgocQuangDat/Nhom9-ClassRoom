@@ -1,0 +1,14 @@
+create 
+{
+      "name": "Tiết 1",
+      "timeStart": "06:30:00",
+      "timeEnd": "07:15:00",
+      "active":true
+}
+
+{
+      "name": "Tiết 2",
+      "timeStart": "07:20:00",
+      "timeEnd": "08:05:00",
+      "active":true
+}

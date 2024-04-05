@@ -1,0 +1,525 @@
+
+### user ########################################################################################
+### lấy 1
+GET   http://localhost:8080/api/user/GV12345
+### lấy hết 
+GET   http://localhost:8080/api/users
+
+### tạo 
+POST http://localhost:8080/api/user
+Content-Type: application/json
+
+{
+    "userId": "PDT12345",
+      "email": "a.@gmail.com",
+      "name": "Giáo Viên B",
+      "gender": "nam",
+      "birthDate": null,
+      "placeOfOrigin": "tpHCM",
+      "role": "PhongDaoTao",
+      "active": true
+
+}
+
+### sửa
+PUT  http://localhost:8080/api/user
+Content-Type: application/json
+
+{
+     "userId": "GV12346",
+      "email": "a.@gmail.com",
+      "name": "Giáo Viên B edit",
+      "gender": "nam",
+      "birthDate": null,
+      "placeOfOrigin": "tpHCM",
+      "role": "GiaoVien",
+      "active": true
+}
+### xóa 
+DELETE    http://localhost:8080/api/user/2025
+### student ########################################################################################
+### lấy 1
+GET   http://localhost:8080/api/student/SV12345
+
+### lấy hết 
+GET   http://localhost:8080/api/students
+
+### tạo 
+POST http://localhost:8080/api/student
+Content-Type: application/json
+
+{
+    "studentId": "SV123456",
+      "name": "Nguyễn Văn A",
+      "gender": "Nam",
+      "birthDate": null,
+      "placeOfOrigin": "tpHCM",
+      "classSchoolId": "b5920664b6da3d7155",
+      "classYear": "abc",
+      "degree": "abc",
+      "formalEducation": "abc",
+      "major": "abc",
+      "active": true
+}
+
+### sửa
+PUT  http://localhost:8080/api/student
+Content-Type: application/json
+
+{
+    "studentId": "SV12345",
+      "name": "Nguyễn Văn A",
+      "gender": "Nam",
+      "birthDate": null,
+      "placeOfOrigin": "tpHCM",
+      "classSchoolId": "1912BAC",
+      "classYear": "abc",
+      "degree": "abc",
+      "formalEducation": "abc",
+      "major": "abc",
+      "active": true
+}
+### xóa 
+DELETE    http://localhost:8080/api/student/SV12345
+### SIG ########################################################################################
+### user login
+POST    http://localhost:8080/api/sig/user-login-id
+Content-Type: application/json
+
+{
+    "userId":"GV12345",
+    "password":"123456"
+}
+
+### student login
+POST    http://localhost:8080/api/sig/student-login
+Content-Type: application/json
+
+{
+    "studentId":"SV123456",
+    "password":"123456"
+}
+### building ########################################################################################
+### lấy 1
+GET   http://localhost:8080/api/building/3d949a56e097bb7cdc
+
+### lấy hết 
+GET   http://localhost:8080/api/buildings
+
+### tạo 
+POST http://localhost:8080/api/building
+Content-Type: application/json
+
+{
+    "buildingName": "tòa nhà A",
+    "active": true
+}
+
+### sửa
+PUT  http://localhost:8080/api/building
+Content-Type: application/json
+
+{
+    "buildingId": "27632fc5288f9369af",
+      "buildingName": "tòa nhà B",
+      "active": false
+}
+### xóa 
+DELETE    http://localhost:8080/api/building/3d949a56e097bb7cdc
+### typeClassRoom ########################################################################################
+### lấy 1
+GET   http://localhost:8080/api/typeClassRoom/7a4499131c06b8a7c5
+
+### lấy hết 
+GET   http://localhost:8080/api/typeClassRooms
+
+### tạo 
+POST http://localhost:8080/api/typeClassRoom
+Content-Type: application/json
+
+{
+      "typeClassRoomName": "phòng nhỏ",
+      "quantityMax": 50,
+      "active": true
+}
+
+### sửa
+PUT  http://localhost:8080/api/typeClassRoom
+Content-Type: application/json
+
+{
+    "typeClassRoomId": "7a4499131c06b8a7c5",
+      "typeClassRoomName": "phòng lớn",
+      "quantityMax": 500,
+      "active": false
+}
+### xóa 
+DELETE    http://localhost:8080/api/typeClassRoom/7a4499131c06b8a7c5
+### classRoom ########################################################################################
+### lấy 1
+GET   http://localhost:8080/api/classRoom/3d949a56e097bb7cdc
+
+### lấy hết 
+GET   http://localhost:8080/api/classRooms
+
+### tạo 
+POST http://localhost:8080/api/classRoom
+Content-Type: application/json
+
+{
+      "classRoomName": "A103",
+      "buildingId": null,
+      "typeClassRoomId": null,
+      "active": true
+}
+
+### sửa
+PUT  http://localhost:8080/api/classRoom
+Content-Type: application/json
+
+{
+    "classRoomId": "e3bf4d2fc0580d8d00",
+      "classRoomName": "A102",
+      "buildingId": null,
+      "typeClassRoomId": null,
+      "active": true
+}
+### xóa 
+DELETE    http://localhost:8080/api/classRoom/e3bf4d2fc0580d8d00
+### lesson ########################################################################################
+### lấy 1
+GET   http://localhost:8080/api/lesson/d54a46976c1008f365
+
+### lấy hết 
+GET   http://localhost:8080/api/lessons
+
+### tạo 
+POST http://localhost:8080/api/lesson
+Content-Type: application/json
+
+{
+      "name": "tiết 2",
+      "timeStart": "16:15:00",
+      "timeEnd": "17:15:00",
+      "active":true
+}
+### tạo nhiều
+POST http://localhost:8080/api/lessons
+Content-Type: application/json
+
+[
+      {
+            "name": "tiết 2",
+            "timeStart": "16:15:00",
+            "timeEnd": "17:15:00",
+            "active":true
+      },
+      {
+            "name": "tiết 2",
+            "timeStart": "16:15:00",
+            "timeEnd": "17:15:00",
+            "active":true
+      }
+]
+
+### sửa
+PUT  http://localhost:8080/api/lesson
+Content-Type: application/json
+
+{
+    "lessonId": "bb38cda271382c84d1",
+      "name": "tiết 1",
+      "timeStart": "16:15:00",
+      "timeEnd": "17:15:00",
+      "active":true
+}
+### xóa 
+DELETE    http://localhost:8080/api/lesson/d54a46976c1008f365
+### subject ########################################################################################
+### lấy 1
+GET   http://localhost:8080/api/subject/9b090822a062e5a817
+
+### lấy hết 
+GET   http://localhost:8080/api/subjects
+
+### tạo 
+POST http://localhost:8080/api/subject
+Content-Type: application/json
+
+{
+      "name": "toán ứng dụng ",
+      "subjectCode": "aabcad",
+      "active":true
+}
+
+### sửa
+PUT  http://localhost:8080/api/subject
+Content-Type: application/json
+
+{
+   "subjectId": "5ab41358722ca2c92f",
+      "name": "toán 3",
+      "subjectCode": "math-123",
+      "active":true
+}
+### xóa 
+DELETE    http://localhost:8080/api/subject/9b090822a062e5a817
+### course ########################################################################################
+### lấy 1
+GET   http://localhost:8080/api/course/2ebec9ceecce63c8ca
+
+### lấy hết 
+GET   http://localhost:8080/api/courses
+
+### tạo 
+POST http://localhost:8080/api/course
+Content-Type: application/json
+
+{
+      "name": "lớp học của lớp fff",
+      "subjectId": null,
+      "semesterId": null,
+      "classSchoolId": null,
+      "active": true
+}
+
+### sửa
+PUT  http://localhost:8080/api/course
+Content-Type: application/json
+
+{
+  "courseId": "4f5b78ef29e3191734",
+      "name": "lớp học của lớp fff",
+      "subjectId": null,
+      "semesterId": null,
+      "classSchoolId": null,
+      "active": true
+}
+### xóa 
+DELETE    http://localhost:8080/api/course/2ebec9ceecce63c8ca
+### courseTeacher ########################################################################################
+### lấy 1
+GET   http://localhost:8080/api/courseTeacher/24eb30e15364996044
+
+### lấy hết 
+GET   http://localhost:8080/api/courseTeachers
+
+### tạo 
+POST http://localhost:8080/api/courseTeacher
+Content-Type: application/json
+
+{
+    "courseId": "a5005e06324e68f0a5",
+      "teacherId": "GV12345"
+}
+
+### sửa
+PUT  http://localhost:8080/api/courseTeacher
+Content-Type: application/json
+
+{
+   "courseTeacherId": "24eb30e15364996044",
+      "courseId": "a5005e06324e68f0a5",
+      "teacherId": "GV12345"
+}
+### xóa 
+DELETE    http://localhost:8080/api/courseTeacher/24eb30e15364996044
+### courseStudent ########################################################################################
+### lấy 1
+GET   http://localhost:8080/api/courseStudent/2c86cf148c3e5e2b15
+
+### lấy hết 
+GET   http://localhost:8080/api/courseStudents
+
+### tạo 
+POST http://localhost:8080/api/courseStudent
+Content-Type: application/json
+
+{
+    "courseId": "4f5b78ef29e3191734",
+      "studentId": "SV12345"
+}
+### tạo nhiều
+POST http://localhost:8080/api/courseStudents
+Content-Type: application/json
+
+[
+      {
+            "courseId": "4f5b78ef29e3191734",
+            "studentId": "SV12345"
+      },
+      {
+            "courseId": "4f5b78ef29e3191734",
+            "studentId": "SV12345"
+      }
+]
+
+### sửa
+PUT  http://localhost:8080/api/courseStudent
+Content-Type: application/json
+
+{
+      "courseStudentId": "2c86cf148c3e5e2b15",
+      "courseId": "a5005e06324e68f0a5",
+      "studentId": "SV12345"
+}
+### xóa 
+DELETE    http://localhost:8080/api/courseStudent/2c86cf148c3e5e2b15
+### session ########################################################################################
+### lấy 1
+GET   http://localhost:8080/api/session/0c7ee8fc1f0e2c0fd8
+
+### lấy hết 
+GET   http://localhost:8080/api/sessions
+
+### tạo 
+POST http://localhost:8080/api/session
+Content-Type: application/json
+
+{
+      "courseId": "98ea9e4c2b3da10991",
+      "classRoomId": "2d58f363403dc47048",
+      "lessonStart": "07a157b04accda9abf",
+      "lessonEnd": "07a157b04accda9abf",
+      "dayOfWeek": 4,
+      "dayChange": "2023-04-21",
+      "sessionType": "main",
+      "sesionStatus": "khúc này bị thừa",
+      "active":true
+}
+### tạo nhiều 
+POST http://localhost:8080/api/sessions
+Content-Type: application/json
+
+[
+      {
+            "courseId": "98ea9e4c2b3da10991",
+            "classRoomId": "2d58f363403dc47048",
+            "lessonStart": "07a157b04accda9abf",
+            "lessonEnd": "07a157b04accda9abf",
+            "dayOfWeek": 4,
+            "dayChange": "2023-04-21",
+            "sessionType": "main",
+            "sesionStatus": "khúc này bị thừa",
+            "active":true
+      },
+      {
+            "courseId": "98ea9e4c2b3da10991",
+            "classRoomId": "2d58f363403dc47048",
+            "lessonStart": "07a157b04accda9abf",
+            "lessonEnd": "07a157b04accda9abf",
+            "dayOfWeek": 4,
+            "dayChange": "2023-04-21",
+            "sessionType": "main",
+            "sesionStatus": "khúc này bị thừa",
+            "active":true
+      }
+]
+
+### sửa
+PUT  http://localhost:8080/api/session
+Content-Type: application/json
+
+{
+     "sessionId": "0c7ee8fc1f0e2c0fd8",
+      "courseId": "a5005e06324e68f0a5",
+      "classRoomId": "e0f9f5ce7b088113f5",
+      "lessonStart": "bb38cda271382c84d1",
+      "lessonEnd": "bb38cda271382c84d1",
+      "dayOfWeek": 4,
+      "dayChange": "2023-04-21",
+      "sessionType": "main",
+      "sesionStatus": "khúc này bị thừa",
+      "active":true
+}
+### xóa 
+DELETE    http://localhost:8080/api/session/0c7ee8fc1f0e2c0fd8
+### semester ########################################################################################
+### lấy 1
+GET   http://localhost:8080/api/semester/0c7ee8fc1f0e2c0fd8
+
+### lấy hết 
+GET   http://localhost:8080/api/semesters
+
+### tạo 
+POST http://localhost:8080/api/semester
+Content-Type: application/json
+
+{
+      "semesterId": "39f18a3530b191e039",
+      "name": "HK1",
+      "schoolYear": 2022,
+      "timeStart": "2023-05-20",
+      "timeEnd": "2023-06-20"
+}
+
+### sửa
+PUT  http://localhost:8080/api/semester
+Content-Type: application/json
+
+{
+     "semesterId": "39f18a3530b191e039",
+      "name": "HK2",
+      "schoolYear": 2022,
+      "timeStart": "2023-05-20",
+      "timeEnd": "2023-06-20"
+}
+### xóa 
+DELETE    http://localhost:8080/api/semester/6ffd308dc4a60e40f1
+### classSchool ########################################################################################
+### lấy 1
+GET   http://localhost:8080/api/classSchool/1912BACd
+
+### lấy hết 
+GET   http://localhost:8080/api/classSchools
+
+### tạo 
+POST http://localhost:8080/api/classSchool
+Content-Type: application/json
+
+{
+      "name": "lớp học bbbc",
+      "active": true
+}
+
+### sửa
+PUT  http://localhost:8080/api/classSchool
+Content-Type: application/json
+
+{
+     "classSchoolId": "1912BAC",
+      "name": "lớp học bbbc",
+      "active": true
+}
+### xóa 
+DELETE    http://localhost:8080/api/classSchool/1912BACd
+### Account  ########################################################################################
+### phòng đào tạo reset password cho user
+POST http://localhost:8080/api/account/reset-password/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJQRFQxMjM0NSIsInJvbGUiOiJQaG9uZ0Rhb1RhbyIsImlhdCI6MTcxMjE2OTQwNywiZXhwIjoxNzE0NzYxNDA3fQ.1IJbCBMA8K9ZsaARFi5JFJYw9qjiRq49YIo_yqljKJs
+Content-Type: application/json
+
+{
+      "userId":"GV12345"
+}
+### phòng đào tạo reset password cho student
+POST http://localhost:8080/api/account/reset-password/student
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJQRFQxMjM0NSIsInJvbGUiOiJQaG9uZ0Rhb1RhbyIsImlhdCI6MTcxMjE2OTQwNywiZXhwIjoxNzE0NzYxNDA3fQ.1IJbCBMA8K9ZsaARFi5JFJYw9qjiRq49YIo_yqljKJs
+Content-Type: application/json
+
+{
+      "studentId":"123456"
+}
+### tự thay đổi mật khẩu
+POST http://localhost:8080/api/account/change-password
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJHVjEyMzQ1Iiwicm9sZSI6IkdpYW9WaWVuIiwiaWF0IjoxNzEyMTY2NzUxLCJleHAiOjE3MTQ3NTg3NTF9.zNwX8lqsg4Dyi0nWnHgaloixoV4xqcFwK1LnQ-J2UUE
+Content-Type: application/json
+
+{
+      "oldPassword":"555555",
+      "newPassword":"999999"
+
+}
+### lấy thông tin 
+GET  http://localhost:8080/api/account/info
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJTVjEyMzQ1NiIsInJvbGUiOiJTaW5oVmllbiIsImlhdCI6MTcxMjMxOTA3NSwiZXhwIjoxNzE0OTExMDc1fQ.R83BazQP14Gt09bqnnbAN5QBYqrqY2A2nxugy8LJQNI
